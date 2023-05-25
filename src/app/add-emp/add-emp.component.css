@@ -1,0 +1,40 @@
+/* body{
+
+    background-color: rgb(230, 207, 230);
+    height: 100%;
+}
+.details{
+    margin: auto;
+    margin-top: 20px;
+    height: 90%; width: 70%;
+    box-sizing: border-box;
+    background-color: white;
+    background-image: url(https://img.freepik.com/free-vector/watercolor-background-with-hand-drawn-elements_52683-57060.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.heading{
+    text-align: center; font-weight: bold;
+    font-family: cursive;
+    color: rgb(109, 46, 109);
+}
+p{
+    text-align: center; font-weight: bold;
+    font-size: 18px;
+    font-family:  monospace;
+    color: rgb(109, 46, 109);
+} */
+
+.main{
+    background-image: url(https://img.freepik.com/free-vector/seamless-white-interlaced-rounded-arc-patterned-background_53876-97975.jpg?w=360);
+          }
+.first{
+    display: flex;
+    }
+    
+.second{
+    display: flex;
+    }
+.third{
+    display: flex;
+    }    

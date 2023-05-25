@@ -1,0 +1,93 @@
+<div style="  height: 100%;  background-image: url(https://img.freepik.com/free-vector/seamless-white-interlaced-rounded-arc-patterned-background_53876-97975.jpg?w=360);">
+<h1 mat-dialog-title style="text-align: center;"> Edit employe list</h1>
+<div mat-dialog-content style>
+<form >
+
+  
+  <div class="first">
+    <!-- First Name -->
+    <div style="margin-top: 20px; margin-left: 20px;">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name </mat-label>
+      <input matInput name="firstName" [(ngModel)] ="employe.firstName"  >
+    </mat-form-field> </div>
+    <!-- Last Name -->
+    <div style="margin-top: 20px; margin-left: 20px ;">
+    <mat-form-field appearance="outline">
+      <mat-label >Last Name </mat-label>
+      <input matInput name="lastName" [(ngModel)] ="employe.lastName"  >
+    </mat-form-field>
+    </div>
+    <!-- Email Id -->
+    <div style="margin-top: 20px; margin-left: 20px ;">
+      <mat-form-field appearance="outline">
+        <mat-label >Email </mat-label>
+        <input  matInput type="email" name="email"  [(ngModel)] ="employe.email" placeholder="abc@gmail.com">
+      </mat-form-field>
+      </div>
+  </div>
+   <div class="second">
+     <!-- Employe Id -->
+    <div style="margin-top: 20px; margin-left: 20px;">
+    <mat-form-field appearance="outline">
+      <mat-label>Employe Id </mat-label>
+      <input  matInput type="number" name="employeId"  [(ngModel)] ="employe.employeId"  >
+    </mat-form-field> </div>
+      <!--Phone number -->
+    <div style="margin-top: 20px; margin-left: 20px;">
+    <mat-form-field appearance="outline">
+      <mat-label> Phone Number </mat-label>
+      <input matInput name="phonenum" [(ngModel)] ="employe.phonenum" >
+    </mat-form-field> </div>
+      <!-- password -->
+    <div style="margin-top: 20px; margin-left: 20px;">
+    <mat-form-field appearance="outline">
+      <mat-label> password </mat-label>
+      <input matInput type="password" name="password"  [(ngModel)] ="employe.password"  >
+    </mat-form-field> </div>
+    
+  </div>
+  
+  <!-- Radio button -->
+    <div style="margin-left: 20px;">
+      role:
+      <mat-radio-group  aria-label="Select an option" name="role" [(ngModel)] ="employe.option">
+        <mat-radio-button value="editor">Editor</mat-radio-button>
+        <mat-radio-button value="admin">Admin</mat-radio-button>
+        <mat-radio-button value="viewer">Viewer</mat-radio-button>
+  
+      </mat-radio-group>
+    </div>
+  <!-- Family members -->
+  
+
+  <div class="third">
+ <!-- created record -->
+ 
+ <div style="margin-top: 20px; margin-left: 20px;">
+    <!-- <p>{{curDate | date:'yyyy-MM-dd'}}</p> -->
+    <mat-form-field appearance="outline">
+      <mat-label>Current date</mat-label>
+      <input matInput  [matDatepicker]="picker" name="currentdate" [(ngModel)] ="employe.currentdate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> </div>
+ <!-- joining date -->
+ <div style="margin-top: 20px; margin-left: 20px;">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput  [matDatepicker]="picker1" name="joindate" [(ngModel)] ="employe.joindate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field> </div>      
+
+  </div>
+    <!-- submit button -->
+    <div style=" margin:30px;" >
+      <button mat-flat-button color="warn" type="submit" (click)="updateemploye()">Edit</button>
+    </div>
+  </form> 
+  
+</div>
+</div>

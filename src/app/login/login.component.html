@@ -1,0 +1,19 @@
+<div  class="container">
+<div style="margin-left: 200px;">
+   <h1><b>welcome </b></h1>
+   <p>please enter your login details</p>
+      <form [formGroup]="loginForm"  >
+         <mat-form-field appearance="outline">
+           <mat-label> email </mat-label>
+           <input style="padding-right: 30px;" matInput placeholder="email"  formControlName="email">
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+           <mat-label> password</mat-label>
+           <input formControlName="password" matInput type="password">
+    
+        </mat-form-field> <br>
+        <button mat-raised-button [disabled]="!validate && !loginForm.valid" type="submit" (click)="login()"  class="btn btn-success">Login</button>
+      </form> <br><br>
+    <h3>Don't have account?<a  routerLink="../add-emp"> <b>Sign up </b></a></h3>
+</div></div>
+

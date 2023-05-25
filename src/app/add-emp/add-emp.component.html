@@ -1,0 +1,120 @@
+<mat-toolbar>
+    <mat-icon>public</mat-icon>
+    <span>EMPLOYE MANAGEMENT FORM</span>
+  </mat-toolbar>
+<div class="main"  >
+    <form [formGroup]="myGroup" (ngSubmit)="onSubmit()"> 
+    <div class="first">
+    <!-- First Name -->
+    <div style="margin-top: 20px; margin-left: 200px;">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name </mat-label>
+      <input formControlName="firstName" matInput placeholder="Name">
+    </mat-form-field> </div>
+    <!-- Last Name -->
+    <div style="margin-top: 20px; margin-left: 20px ;">
+    <mat-form-field appearance="outline">
+      <mat-label >Last Name </mat-label>
+      <input formControlName="lastName" matInput placeholder="Name">
+    </mat-form-field>
+    </div>
+    <!-- Email Id -->
+    <div style="margin-top: 20px; margin-left: 20px ;">
+      <mat-form-field appearance="outline">
+        <mat-label >Email </mat-label>
+        <input formControlName="email" matInput type="email" placeholder="abc@gmail.com">
+      </mat-form-field>
+      </div>
+  </div>
+   <div class="second">
+     <!-- Employe Id -->
+    <div style="margin-top: 20px; margin-left: 200px;">
+    <mat-form-field appearance="outline">
+      <mat-label>Employe Id </mat-label>
+      <input formControlName="employeId" matInput  >
+    </mat-form-field> </div>
+      <!--Phone number -->
+    <div style="margin-top: 20px; margin-left: 20px;">
+    <mat-form-field appearance="outline">
+      <mat-label> Phone Number </mat-label>
+      <input formControlName="phonenum" matInput  >
+    </mat-form-field> </div>
+      <!-- password -->
+    <div style="margin-top: 20px; margin-left: 20px;">
+    <mat-form-field appearance="outline">
+      <mat-label> password </mat-label>
+      <input formControlName="password" matInput type="password"  >
+    </mat-form-field> </div>
+    
+  </div>
+  
+  <!-- Radio button -->
+    <div style="margin-left: 200px;">
+      role:
+      <mat-radio-group formControlName="option" aria-label="Select an option">
+        <mat-radio-button value="editor">Editor</mat-radio-button>
+        <mat-radio-button value="admin">Admin</mat-radio-button>
+        <mat-radio-button value="viewer">Viewer</mat-radio-button>
+  
+      </mat-radio-group>
+      <input type="file"  (change)="onFileSelected($event)">
+    </div>
+  <!-- Family members -->
+  <br>
+  <h3 style="margin-left: 200px"> Family Members</h3>
+  <div style="margin-left: 200px; margin-top: 20px;" >
+  
+    <div  formArrayName="familymembers">
+      <ng-container *ngFor="let familymembers of myGroup.get('familymembers')['controls'] ;index as i ">
+      <div >  <mat-form-field appearance="outline" style="margin-right: 30px; margin-top: 10px;">
+          <mat-label >Name</mat-label>
+          <input matInput placeholder="name"  formControlName= {{i}}>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="margin-right: 30px;">
+          <mat-label >Occupation</mat-label>
+          <input matInput placeholder="occupation"  formControlName= {{i}}>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label >age</mat-label>
+          <input matInput placeholder="age"  formControlName= {{i}}>
+        </mat-form-field>
+      </div>
+  <br>
+      </ng-container>
+      </div>
+    <div>
+            <button  (click)="addEduction()" mat-flat-button color="warn" type="button">+</button>
+  
+    </div> 
+  </div>
+
+  <div class="third">
+ <!-- created record -->
+ 
+ <div style="margin-top: 20px; margin-left: 200px;">
+    <!-- <p>{{curDate | date:'yyyy-MM-dd'}}</p> -->
+    <mat-form-field appearance="outline">
+      <mat-label>Current date</mat-label>
+      <input matInput  [matDatepicker]="picker"  [formControl]="date" formControlName="currentdate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> </div>
+ <!-- joining date -->
+ <div style="margin-top: 20px; margin-left: 20px;">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput  [matDatepicker]="picker1" formControlName="joindate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field> </div>      
+
+  </div>
+    <!-- submit button -->
+    <div style="margin-left: 200px; margin-top: 20px;">
+      <button mat-flat-button color="primary" [disabled]="!validate && !myGroup.valid"  type="submit">Submit</button>
+  
+    </div>
+  </form> 
+  
+</div>

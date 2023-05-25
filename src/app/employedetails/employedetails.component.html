@@ -1,0 +1,20 @@
+<p>employedetails works!</p>
+
+<div style="background-image: url(https://img.freepik.com/free-vector/seamless-white-interlaced-rounded-arc-patterned-background_53876-97975.jpg?w=360);">
+    <div  class="box">
+        <h1 style="padding-top: 20px; text-align: center; color: rgb(211, 205, 205);"> <b>EMPLOYE DETAILS</b> </h1 >
+        <hr>
+        
+            <img src="{{employe.img}}" (error)="setDefaultPic()"
+            alt="No  image" class="img-fluid"
+            style=" height: 200px; width: 200px; margin-left: 180px; border-radius: 0px;">
+            <div style="margin-left: 200px;"> 
+            <p>EMPLOYEE ID: {{ employe?.employeId }}</p>
+            <p>FIRST NAME: {{ employe?.firstName }}</p>
+            <p>LAST NAME: {{ employe?.lastName }}</p>
+            <p>EMAIL: {{ employe?.email }}</p>
+            <p>RECORD DATE: {{ employe?.currentdate |date}}</p>
+            <p>JOINING DATE: {{ employe?.joindate|date }}</p>
+        </div>
+    </div>
+</div>
